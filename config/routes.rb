@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  #comentamos la siguiente linea para que devise tome los controladores generados por nosotros
+  # ya que vamos a agregarle lo de facebook
+  #devise_for :users
+  
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    sessions: "users/sessions",
+    passwords: "users/passwords",
+    omniauth_callbacks: "users/omniauth_callbacks"
+    
+  }
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
